@@ -17,19 +17,18 @@ class Persoon
     LEFT JOIN Contact ON Persoon.Id = Contact.PersoonId 
     INNER JOIN TypePersoon ON Persoon.TypePersoonId = TypePersoon.Id 
     ORDER BY Persoon.Achternaam ASC;");
-
-    $this->db->bind(':DatumAangemaakt', $_POST["date"], PDO::PARAM_STR);
     $result = $this->db->resultSet();
     return $result;
   }
   
-  public function getRowsByDate($date) {
-    $conn = $this->db->dbHandler;
-    $stmt = $conn->prepare("SELECT * FROM your_table WHERE DatumAangemaakt = :date");
-    $stmt->bindParam(':date', $date);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+  
+//   public function getRowsByDate($date) {
+//     $conn = $this->db->dbHandler;
+//     $stmt = $conn->prepare("SELECT * FROM your_table WHERE DatumAangemaakt = :date");
+//     $stmt->bindParam(':date', $date);
+//     $stmt->execute();
+//     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+// }
 
 
 
