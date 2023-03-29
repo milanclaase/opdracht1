@@ -34,7 +34,7 @@ class Instructeur extends Controller
     }
 
     /**
-     * Stuur de informatie door naar de view
+     * Stuur de informatie door naar de view test
      */
     $data = [
       'title' => 'Instructeurs in dienst',
